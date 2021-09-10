@@ -29,6 +29,12 @@ namespace Contacts.Api
             // DEMO: AppInsights
             services.AddApplicationInsightsTelemetry();
             
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "Development", builder => 
+                    builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost"));
+            }); 
+            
             services.AddControllers();
             
             // Register the Swagger generator, defining 1 or more Swagger documents
@@ -81,6 +87,10 @@ namespace Contacts.Api
 
             app.UseHttpsRedirection();
 
+            if (env.IsDevelopment())
+            {
+                app.UseCors("Development");
+            }
             app.UseRouting();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
