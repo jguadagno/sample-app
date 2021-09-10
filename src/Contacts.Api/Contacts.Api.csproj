@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>23e6f949-3393-4128-aa27-cdc13ae91e48</UserSecretsId>
+    <LangVersion>9</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contacts.Data.SqlServer\Contacts.Data.SqlServer.csproj" />
