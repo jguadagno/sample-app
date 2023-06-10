@@ -1,7 +1,6 @@
-namespace Contacts.WebUi.Models
+namespace Contacts.WebUi.Models;
+
+public class Settings : ISettings
 {
-    public class Settings : ISettings
-    {
-        public string ApiRootUri { get; set; }
-    }
+    public string ApiRootUri { get; set; }
 }

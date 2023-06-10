@@ -4,6 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <UserSecretsId>825af8b1-1b68-464d-b5cb-42c8755f6686</UserSecretsId>
         <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
