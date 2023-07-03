@@ -59,7 +59,7 @@ builder.Services.AddTransient<IContactDataStore, SqliteDataStore>();
 To configure the application to use Microsoft SQL Server,
 update the `ConnectionStrings` `ContactsDatabaseSqlite` setting in your *appsettings.json* file(s) with the connection string to your instance of Microsoft SQL Server.
 
-The connection string is in the format of `Data Source=<filename>;`.
+The connection string is in the format of `Data Source=C:\databases\contacts.db;`.
 
 Example:
 
