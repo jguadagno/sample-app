@@ -47,6 +47,16 @@ public class ContactManager : IContactManager
 
         return await _contactRepository.GetContactsAsync(firstName, lastName);
     }
+    
+    public List<Contact> GetContactsFull()
+    {
+        return _contactRepository.GetContactsFull();
+    }
+    
+    public async Task<List<Contact>> GetContactsFullAsync()
+    {
+        return await _contactRepository.GetContactsFullAsync();
+    }
 
     private static void ValidationForGetContacts(string firstName, string lastName)
     {

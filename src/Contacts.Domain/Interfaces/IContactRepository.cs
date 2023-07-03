@@ -14,7 +14,10 @@ public interface IContactRepository
         
     List<Contact> GetContacts(string firstName, string lastName);
     Task<List<Contact>> GetContactsAsync(string firstName, string lastName);
-        
+    
+    List<Contact> GetContactsFull();
+    Task<List<Contact>> GetContactsFullAsync();
+    
     Contact SaveContact(Contact contact);
     Task<Contact> SaveContactAsync(Contact contact);
         

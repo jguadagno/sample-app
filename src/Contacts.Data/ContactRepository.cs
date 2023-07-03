@@ -46,6 +46,16 @@ public class ContactRepository : IContactRepository
         return await _contactDataStore.GetContactsAsync(firstName, lastName);
     }
 
+    public List<Contact> GetContactsFull()
+    {
+        return _contactDataStore.GetContactsFull();
+    }
+    
+    public async Task<List<Contact>> GetContactsFullAsync()
+    {
+        return await _contactDataStore.GetContactsFullAsync();
+    }
+    
     public Contact SaveContact(Contact contact)
     {
         return _contactDataStore.SaveContact(contact);

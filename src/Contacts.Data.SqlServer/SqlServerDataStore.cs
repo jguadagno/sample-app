@@ -73,6 +73,28 @@ public class SqlServerDataStore: IContactDataStore
             .Where(contact => contact.LastName == lastName && contact.FirstName == firstName).ToListAsync();
         return _mapper.Map<List<Contact>>(dbContact);
     }
+    
+    public List<Contact> GetContactsFull()
+    {
+        var contacts = _contactContext.Contacts
+            .Include(c => c.Addresses)
+            .Include(c => c.Phones)
+            .Include(c => c.Addresses).ThenInclude(a => a.AddressType)
+            .Include(c => c.Phones).ThenInclude(p => p.PhoneType)
+            .ToList();
+        return _mapper.Map<List<Contact>>(contacts);
+    }
+
+    public async Task<List<Contact>> GetContactsFullAsync()
+    {
+        var contacts = await _contactContext.Contacts
+            .Include(c => c.Addresses)
+            .Include(c => c.Phones)
+            .Include(c => c.Addresses).ThenInclude(a => a.AddressType)
+            .Include(c => c.Phones).ThenInclude(p => p.PhoneType)
+            .ToListAsync();
+        return _mapper.Map<List<Contact>>(contacts);
+    }
         
     private static void ValidationForGetContacts(string firstName, string lastName)
     {

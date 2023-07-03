@@ -119,6 +119,18 @@ public class ContactsController: ControllerBase
     {
         return await _contactManager.GetContactsAsync(firstname, lastname);
     }
+    
+    /// <summary>
+    /// Returns a list of contacts with their phone numbers and addresses
+    /// </summary>
+    /// <returns>A list of 0 or more contacts with their phone numbers and addresses</returns>
+    /// <response code="200">Ok</response>
+    [HttpGet("full")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<List<Contact>> GetContactsFull()
+    {
+        return await _contactManager.GetContactsFullAsync();
+    }
 
     /// <summary>
     /// Gets phone numbers for the contact
