@@ -6,6 +6,7 @@
     <LangVersion>default</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Contacts.Data.Sqlite\Contacts.Data.Sqlite.csproj" />
     <ProjectReference Include="..\Contacts.Data.SqlServer\Contacts.Data.SqlServer.csproj" />
     <ProjectReference Include="..\Contacts.Domain\Contacts.Domain.csproj" />
     <ProjectReference Include="..\Contacts.Logic\Contacts.Logic.csproj" />
