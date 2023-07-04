@@ -2,8 +2,6 @@ using System;
 using System.IO;
 using System.Reflection;
 using Contacts.Data;
-using Contacts.Data.Sqlite;
-using Contacts.Data.SqlServer;
 using Contacts.Domain.Interfaces;
 using Contacts.Logic;
 using Microsoft.AspNetCore.Builder;
@@ -17,9 +15,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddTransient<IContactRepository, ContactRepository>();
 builder.Services.AddTransient<IContactManager, ContactManager>();
-//builder.Services.AddTransient<IContactDataStore, SqlServerDataStore>();
-builder.Services.AddTransient<IContactDataStore, SqliteDataStore>();
-builder.Services.AddTransient<IConfiguration>(sp => builder.Configuration);
+//builder.Services.AddTransient<IContactDataStore, Contacts.Data.SqlServer.SqlServerDataStore>();
+builder.Services.AddTransient<IContactDataStore, Contacts.Data.Sqlite.SqliteDataStore>();
+builder.Services.AddTransient<IConfiguration>(_ => builder.Configuration);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
