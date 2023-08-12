@@ -90,3 +90,7 @@ and comment the following line:
 ```csharp
 builder.Services.AddTransient<IContactDataStore, SqlServerDataStore>();
 ```
+
+### API URI
+
+In the WebUI appsettings.json file, set the ApiRootUri.  If you're running locally, with no changes to the Api project startup options, the setting should be "https://localhost:5901/" (don't forget the trailing slash).  Otherwise, set the URL and port to whatever you configured.
