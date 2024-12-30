@@ -15,8 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddTransient<IContactRepository, ContactRepository>();
 builder.Services.AddTransient<IContactManager, ContactManager>();
-//builder.Services.AddTransient<IContactDataStore, Contacts.Data.SqlServer.SqlServerDataStore>();
-builder.Services.AddTransient<IContactDataStore, Contacts.Data.Sqlite.SqliteDataStore>();
+builder.Services.AddTransient<IContactDataStore, Contacts.Data.SqlServer.SqlServerDataStore>();
+//builder.Services.AddTransient<IContactDataStore, Contacts.Data.Sqlite.SqliteDataStore>();
 builder.Services.AddTransient<IConfiguration>(_ => builder.Configuration);
 
 builder.Services.AddControllers();
